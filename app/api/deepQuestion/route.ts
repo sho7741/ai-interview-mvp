@@ -5,7 +5,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,  // .env.local で管理
 });
 
-export async function POST(req: NextRequest) {
+export async function POST(r_eq: NextRequest) {
   try {
     const { userAnswer } = await req.json();
 
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   return NextResponse.json({
     message: "Use POST with { userAnswer }"
   });
